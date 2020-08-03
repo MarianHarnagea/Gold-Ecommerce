@@ -30,6 +30,7 @@ const Accessories = () => {
                 />
               );
             }
+            return null;
           })}
         </div>
       </div>

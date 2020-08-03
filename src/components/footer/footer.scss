@@ -1,0 +1,96 @@
+$primaryColor: #c6a85b;
+
+.footer-container {
+  width: 100%;
+
+  .subscribe-section {
+    width: 100%;
+    padding: 40px;
+    background-color: $primaryColor;
+
+    h4 {
+      color: white;
+      font-weight: 100;
+      font-size: 1.2rem;
+    }
+    p {
+      color: white;
+      font-weight: 100;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    .subscribe-form-container {
+      width: 100%;
+      form {
+        position: relative;
+        width: 100%;
+
+        input {
+          height: 45px;
+          border: none;
+          width: 100%;
+        }
+
+        button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 45px;
+          background-color: black;
+          color: white;
+          border: none;
+          padding: 0 25px;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .footer-links {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    h6 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: rgb(87, 87, 87);
+      letter-spacing: 2px;
+      margin-top: 20px;
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: column;
+      // @media (min-width: 768px) {
+
+      // }
+
+      img {
+        width: 30px;
+        margin: 10px 10px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      li {
+        margin-top: 5px;
+        a {
+          text-decoration: none;
+          font-weight: 100;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+          color: black;
+        }
+        a:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}

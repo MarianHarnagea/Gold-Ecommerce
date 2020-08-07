@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+
 // Pages
 import Home from "./pages/homepage/Home";
 import AllProducts from "./pages/products-pages/AllProducts";
@@ -69,6 +70,7 @@ function App() {
         />
         <Cart cart={cart} />
         <Wrapper wrapper={wrapper} handleWrapperClose={handleCloseAll} />
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/collection/all" component={AllProducts} />
@@ -83,6 +85,7 @@ function App() {
           <Route path="/collection/product/:title" component={ProductDetails} />
           <Route component={Home} />
         </Switch>
+
         <Footer />
       </div>
     </Router>

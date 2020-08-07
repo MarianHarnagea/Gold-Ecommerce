@@ -1,5 +1,6 @@
 import React from "react";
 import mainImage from "../../assets/home-imgs/header-main-image.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,7 +10,9 @@ const Header = () => {
         <div className="main-img">
           <h1>Discover our full range of headphones</h1>
           <img src={mainImage} alt="" />
-          <button>Discover It</button>
+          <Link to="/collection/headphones">
+            <button>Discover It</button>
+          </Link>
         </div>
       </div>
     </div>

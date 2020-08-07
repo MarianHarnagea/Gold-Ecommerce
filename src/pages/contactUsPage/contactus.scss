@@ -45,5 +45,10 @@ $primaryColor: #c6a85b;
       border: none;
       font-weight: 600;
     }
+
+    button:active {
+      margin: none;
+      background-color: #a78e4f;
+    }
   }
 }

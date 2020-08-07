@@ -48,6 +48,11 @@ $secundaryColor: #5f5f5f;
         font-size: 0.9rem;
         font-weight: 600;
       }
+
+      button:active {
+        margin: none;
+        background-color: #a78e4f;
+      }
     }
   }
 }

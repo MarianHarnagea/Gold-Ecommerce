@@ -87,6 +87,11 @@ $primaryColor: #c6a85b;
         letter-spacing: 1px;
         border: none;
       }
+
+      button:active {
+        margin: none;
+        background-color: #a78e4f;
+      }
     }
 
     .description-container {

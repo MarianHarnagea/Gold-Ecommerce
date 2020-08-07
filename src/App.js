@@ -81,6 +81,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/collection/product/:title" component={ProductDetails} />
+          <Route component={Home} />
         </Switch>
         <Footer />
       </div>

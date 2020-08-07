@@ -12,7 +12,7 @@ const CartProduct = (props) => {
   return (
     <div className="cart-product">
       <div className="row">
-        <div className="col-6 d-flex">
+        <div className="col-6 d-flex justify-content-around">
           <div className="product-img">
             <img
               src={require(`../../assets/products-imgs/${imgs.img_1}`)}
@@ -23,19 +23,6 @@ const CartProduct = (props) => {
             <h3>{title}</h3>
           </div>
         </div>
-
-        {/* <div className="col-4">
-          <div className="product-name">
-
-            <h3>{title}</h3>
-          </div>
-        </div> */}
-
-        {/* <div className="col-1">
-          <div className="product-qty">
-            <h4>{quantity}</h4>
-          </div>
-        </div> */}
 
         <div className="col-6 d-flex justify-content-around">
           <div className="product-qty">
@@ -52,16 +39,6 @@ const CartProduct = (props) => {
             />
           </div>
         </div>
-
-        {/* <div className="col-2">
-          <div className="product-delete">
-            <img
-              src={cartDeleteProduct}
-              alt="cartDeleteProduct"
-              onClick={() => dispatch(removeProduct(props.product))}
-            />
-          </div>
-        </div> */}
       </div>
     </div>
   );

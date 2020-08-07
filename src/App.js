@@ -48,7 +48,7 @@ function App() {
     }
   };
 
-  const handleWrapperClose = () => {
+  const handleCloseAll = () => {
     setMobileMenu(false);
     setCart(false);
     setWrapper(false);
@@ -58,10 +58,17 @@ function App() {
     <Router>
       <div className="App">
         <ScrollToTop />
-        <Navbar openCart={openCart} openMenu={openMenu} />
-        <MobileNavLinks mobileMenu={mobileMenu} />
+        <Navbar
+          openCart={openCart}
+          openMenu={openMenu}
+          handleCloseAll={handleCloseAll}
+        />
+        <MobileNavLinks
+          mobileMenu={mobileMenu}
+          handleCloseAll={handleCloseAll}
+        />
         <Cart cart={cart} />
-        <Wrapper wrapper={wrapper} handleWrapperClose={handleWrapperClose} />
+        <Wrapper wrapper={wrapper} handleWrapperClose={handleCloseAll} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/collection/all" component={AllProducts} />

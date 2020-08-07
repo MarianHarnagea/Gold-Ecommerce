@@ -15,7 +15,7 @@ const Dropdown = ({ navdropdown, handleCloseDropdown }) => {
       }
     >
       <div className="drop-down-link">
-        <Link to="/collection/headphones">
+        <Link to="/collection/headphones" onClick={handleCloseDropdown}>
           <div className="link-image">
             <img src={catalogHeadphones} alt="/collection/headphones" />
           </div>
@@ -24,7 +24,7 @@ const Dropdown = ({ navdropdown, handleCloseDropdown }) => {
         </Link>
       </div>
       <div className="drop-down-link">
-        <Link to="/collection/earphones">
+        <Link to="/collection/earphones" onClick={handleCloseDropdown}>
           <div className="link-image">
             <img src={catalogEarphones} alt="catalogEarphones" />
           </div>
@@ -33,7 +33,7 @@ const Dropdown = ({ navdropdown, handleCloseDropdown }) => {
         </Link>
       </div>
       <div className="drop-down-link">
-        <Link to="/collection/accessories">
+        <Link to="/collection/accessories" onClick={handleCloseDropdown}>
           <div className="link-image">
             <img src={catalogAccessories} alt="catalog_accessories" />
           </div>

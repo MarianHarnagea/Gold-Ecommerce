@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./mobileNavLinks.scss";
 import dropdownPlusBtn from "../../assets/home-imgs/dropdown-plus.png";
 
-const MobileNavLinks = ({ mobileMenu }) => {
+const MobileNavLinks = ({ mobileMenu, handleCloseAll }) => {
   const [dropdown, setDropdown] = useState(false);
 
   const handleDropDown = () => {
@@ -18,11 +18,15 @@ const MobileNavLinks = ({ mobileMenu }) => {
     >
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={handleCloseAll}>
+            Home
+          </Link>
         </li>
         <li>
           <div className="catalog-link">
-            <Link to="/collection/all">Catalog</Link>
+            <Link to="/collection/all" onClick={handleCloseAll}>
+              Catalog
+            </Link>
             <img
               src={dropdownPlusBtn}
               onClick={handleDropDown}
@@ -37,28 +41,48 @@ const MobileNavLinks = ({ mobileMenu }) => {
                 : "catalog-dropdown"
             }
           >
-            <Link to="/collection/headphones" className="dropdown-link">
+            <Link
+              to="/collection/headphones"
+              className="dropdown-link"
+              onClick={handleCloseAll}
+            >
               HeadPhones
             </Link>
-            <Link to="/collection/earphones" className="dropdown-link">
+            <Link
+              to="/collection/earphones"
+              className="dropdown-link"
+              onClick={handleCloseAll}
+            >
               Earphones
             </Link>
-            <Link to="/collection/accessories" className="dropdown-link">
+            <Link
+              to="/collection/accessories"
+              className="dropdown-link"
+              onClick={handleCloseAll}
+            >
               Accessories
             </Link>
           </div>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog" onClick={handleCloseAll}>
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to="/contactus">Contact Us</Link>
+          <Link to="/contactus" onClick={handleCloseAll}>
+            Contact Us
+          </Link>
         </li>
         <li>
-          <Link to="/faq">FAQ</Link>
+          <Link to="/faq" onClick={handleCloseAll}>
+            FAQ
+          </Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login" onClick={handleCloseAll}>
+            Login
+          </Link>
         </li>
       </ul>
     </div>

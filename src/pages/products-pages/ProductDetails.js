@@ -1,18 +1,59 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import minus from "../../assets/product-details/minus.png";
 import add from "../../assets/product-details/add.png";
+import ProductDetailsImgCarousel from "../../components/products-page-components/ProductDetailsImgCarousel";
 
 import "./collection.scss";
 
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addProduct,
+  addQuantity,
+  removeQuantity,
+} from "../../store/actions/productsActions";
+
 const ProductDetails = ({ match }) => {
+  const [tabs, setTabs] = useState({
+    reviewsTab: true,
+    returnsTab: false,
+    shippingTab: false,
+  });
+
+  const handleActiveTab = (e) => {
+    let tab = e.target.innerHTML;
+    if (tab === "reviews") {
+      setTabs({
+        ...tabs,
+        reviewsTab: true,
+        returnsTab: false,
+        shippingTab: false,
+      });
+    } else if (tab === "returns") {
+      setTabs({
+        ...tabs,
+        reviewsTab: false,
+        returnsTab: true,
+        shippingTab: false,
+      });
+    } else if (tab === "shipping") {
+      setTabs({
+        ...tabs,
+        reviewsTab: false,
+        returnsTab: false,
+        shippingTab: true,
+      });
+    }
+  };
+
   const products = useSelector((state) => state.products.productsData);
+  const quantity = useSelector((state) => state.products.quantity);
 
   const filteredProduct = products.filter(
     (product) => product.title === match.params.title
   );
 
-  //   console.log(filteredProduct[0].info.description);
+  const dispatch = useDispatch();
 
   return (
     <div className="collection pb-5">
@@ -25,9 +66,11 @@ const ProductDetails = ({ match }) => {
               <h2>$ {filteredProduct[0].price.toFixed(2)}</h2>
             </div>
             <div className="product-image py-3">
-              <img
-                src={require(`../../assets/products-imgs/${filteredProduct[0].imgs.img_1}`)}
-                alt="MW65b"
+              <ProductDetailsImgCarousel
+                img_1={filteredProduct[0].imgs.img_1}
+                img_2={filteredProduct[0].imgs.img_2}
+                img_3={filteredProduct[0].imgs.img_3}
+                img_4={filteredProduct[0].imgs.img_4}
               />
             </div>
           </div>
@@ -40,17 +83,19 @@ const ProductDetails = ({ match }) => {
 
             <div className="quantity-container">
               <p>Quantity</p>
-              <button>
+              <button onClick={() => dispatch(removeQuantity())}>
                 <img src={minus} alt="minus" />
               </button>
-              <h4>1</h4>
-              <button>
+              <h4>{quantity}</h4>
+              <button onClick={() => dispatch(addQuantity())}>
                 <img src={add} alt="add" />
               </button>
             </div>
 
             <div className="add-to-cart-btn">
-              <button>add to cart</button>
+              <button onClick={() => dispatch(addProduct(filteredProduct[0]))}>
+                add to cart
+              </button>
             </div>
 
             <div className="description-container">
@@ -64,17 +109,44 @@ const ProductDetails = ({ match }) => {
 
             <div className="product-tabs mt-5">
               <div className="tabs">
-                <p className="active-tab">reviews</p>
-                <p className="">returns</p>
-                <p className="">shipping</p>
+                <p
+                  onClick={(e) => handleActiveTab(e)}
+                  className={tabs.reviewsTab ? "active-tab" : ""}
+                >
+                  reviews
+                </p>
+                <p
+                  onClick={(e) => handleActiveTab(e)}
+                  className={tabs.returnsTab ? "active-tab" : ""}
+                >
+                  returns
+                </p>
+                <p
+                  onClick={(e) => handleActiveTab(e)}
+                  className={tabs.shippingTab ? "active-tab" : ""}
+                >
+                  shipping
+                </p>
               </div>
 
               <div className="tab-content tab-content-active">
-                <div className="tab-reviews tab tab-active">
+                <div
+                  className={
+                    tabs.reviewsTab
+                      ? "tab-reviews tab tab-active"
+                      : "tab-reviews tab"
+                  }
+                >
                   <p>No reviews yes</p>
                   <button>write a review</button>
                 </div>
-                <div className="tab-shipping tab  ">
+                <div
+                  className={
+                    tabs.shippingTab
+                      ? "tab-shipping tab tab-active"
+                      : "tab-shipping tab"
+                  }
+                >
                   <h3 className="text-lead">
                     Business days are Monday-Friday ; Holidays, Saturday and
                     Sunday are not included in shipping days.
@@ -91,7 +163,13 @@ const ProductDetails = ({ match }) => {
                     week.
                   </h3>
                 </div>
-                <div className="tab-returns tab ">
+                <div
+                  className={
+                    tabs.returnsTab
+                      ? "tab-returns tab tab-active"
+                      : "tab-returns tab"
+                  }
+                >
                   <h3>
                     Our policy lasts 30 days. If 30 days have gone by since your
                     purchase, unfortunately we can’t offer you a refund or

@@ -14,14 +14,14 @@ const productsData = [
       img_1: "MW65B_1.png",
       img_2: "MW65B_2.png",
       img_3: "MW65B_3.png",
-      img_4: "MW65B_4.png",
+      img_4: "MW65B_4.jpg",
     },
   },
   {
     id: 2,
     category: "headphones",
     title: "MW65 White",
-    price: 499.0,
+    price: 349.0,
     info: {
       description_title:
         "Our Most Technically Sophisticated Noise-Cancelling Wireless Headphones",
@@ -32,14 +32,14 @@ const productsData = [
       img_1: "MW65W_1.png",
       img_2: "MW65W_2.png",
       img_3: "MW65W_3.png",
-      img_4: "MW65W_4.png",
+      img_4: "MW65W_4.jpg",
     },
   },
   {
     id: 3,
     category: "headphones",
     title: "MW65 Blue",
-    price: 499.0,
+    price: 349.0,
     info: {
       description_title:
         "Our Most Technically Sophisticated Noise-Cancelling Wireless Headphones",
@@ -50,14 +50,14 @@ const productsData = [
       img_1: "MW65BL_1.png",
       img_2: "MW65BL_2.png",
       img_3: "MW65BL_3.png",
-      img_4: "MW65BL_4.png",
+      img_4: "MW65BL_4.jpg",
     },
   },
   {
     id: 4,
     category: "headphones",
     title: "MW65 Brown",
-    price: 499.0,
+    price: 349.0,
     info: {
       description_title:
         "Our Most Technically Sophisticated Noise-Cancelling Wireless Headphones",
@@ -68,14 +68,14 @@ const productsData = [
       img_1: "MW65BR_1.png",
       img_2: "MW65BR_2.png",
       img_3: "MW65BR_3.png",
-      img_4: "MW65BR_4.png",
+      img_4: "MW65BR_4.jpg",
     },
   },
   {
     id: 5,
     category: "earphones",
     title: "ME05 Black",
-    price: 299.0,
+    price: 199.0,
     info: {
       description_title: "Our Most Technically Sophisticated Wired Earphones",
       description:
@@ -91,7 +91,7 @@ const productsData = [
     id: 6,
     category: "earphones",
     title: "ME05 Gold",
-    price: 299.0,
+    price: 199.0,
     info: {
       description_title: "Our Most Technically Sophisticated Wired Earphones",
       description:
@@ -107,7 +107,7 @@ const productsData = [
     id: 7,
     category: "earphones",
     title: "MW07 PLUS",
-    price: 399.0,
+    price: 249.0,
     info: {
       description_title:
         "Our Most Technically Sophisticated Noise-Cancelling Wireless Earphones",
@@ -126,7 +126,7 @@ const productsData = [
     id: 8,
     category: "accessories",
     title: "MW07 PLUS Charging Case & Canvas Pouch ",
-    price: 299.0,
+    price: 149.0,
     info: {
       description:
         "Hand-polished stainless steel charging case provides elegant mobility and holds 3 additional charges for a total of 40 hours of listening time for MW07 PLUS True Wireless Earphones.",
@@ -141,7 +141,7 @@ const productsData = [
     id: 9,
     category: "accessories",
     title: "Headphone Stand ",
-    price: 99.0,
+    price: 49.0,
     info: {
       description:
         "Our stand is designed to display your headphones in the most elegant and utilitarian way, while maintaining the organization and beauty of your desk, studio or home. ",

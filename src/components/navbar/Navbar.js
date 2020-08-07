@@ -7,8 +7,11 @@ import cartMobile from "../../assets/home-imgs/cart_icon.png";
 import arrowDown from "../../assets/home-imgs/down-arrow.png";
 import Dropdown from "./Dropdown";
 
+import { useSelector } from "react-redux";
+
 function Navbar({ openCart, openMenu }) {
   const [navdropdown, setNavDropdown] = useState(false);
+  const cart = useSelector((state) => state.products.cart);
 
   const handleNavDropdown = () => {
     setNavDropdown(true);
@@ -37,7 +40,11 @@ function Navbar({ openCart, openMenu }) {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/collection/all" onMouseEnter={handleNavDropdown}>
+              <Link
+                to="/collection/all"
+                onClick={handleCloseDropdown}
+                onMouseEnter={handleNavDropdown}
+              >
                 Catalog <img src={arrowDown} alt="arrowDown" />
               </Link>
             </li>
@@ -59,13 +66,13 @@ function Navbar({ openCart, openMenu }) {
           </h4>
           <div className="cart-md" onClick={openCart}>
             <h4>Cart</h4>
-            <span>0</span>
+            <span>{cart.length}</span>
           </div>
         </div>
 
         <div className="cart-mobile" onClick={openCart}>
           <img src={cartMobile} alt="cartMobile" />
-          <span>12</span>
+          <span>{cart.length}</span>
         </div>
       </div>
       <Dropdown

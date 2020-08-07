@@ -36,12 +36,17 @@ $secondaryColor: #c6a85b;
 
       span {
         position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 12px;
+        top: 0px;
+        right: 0px;
+        font-size: 10px;
         background: $secondaryColor;
+        text-align: center;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
-        padding: 0px 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
@@ -81,10 +86,15 @@ $secondaryColor: #c6a85b;
           position: absolute;
           top: -8px;
           right: -8px;
-          font-size: 12px;
+          font-size: 10px;
           background: $secondaryColor;
+          text-align: center;
+          width: 12px;
+          height: 12px;
           border-radius: 50%;
-          padding: 0px 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }

@@ -12,32 +12,38 @@ const CartProduct = (props) => {
   return (
     <div className="cart-product">
       <div className="row">
-        <div className="col-2">
+        <div className="col-6 d-flex">
           <div className="product-img">
-            {/* <img src={imgcart} alt="" /> */}
             <img
               src={require(`../../assets/products-imgs/${imgs.img_1}`)}
               alt={imgs.img_1}
             />
           </div>
-        </div>
-        <div className="col-5">
           <div className="product-name">
-            {/* <h2>Master & Dynamic</h2> */}
             <h3>{title}</h3>
           </div>
         </div>
-        <div className="col-1">
+
+        {/* <div className="col-4">
+          <div className="product-name">
+
+            <h3>{title}</h3>
+          </div>
+        </div> */}
+
+        {/* <div className="col-1">
           <div className="product-qty">
             <h4>{quantity}</h4>
           </div>
-        </div>
-        <div className="col-2">
+        </div> */}
+
+        <div className="col-6 d-flex justify-content-around">
+          <div className="product-qty">
+            <h4>{quantity}</h4>
+          </div>
           <div className="product-price">
             <h3>$ {price}</h3>
           </div>
-        </div>
-        <div className="col-2">
           <div className="product-delete">
             <img
               src={cartDeleteProduct}
@@ -46,6 +52,16 @@ const CartProduct = (props) => {
             />
           </div>
         </div>
+
+        {/* <div className="col-2">
+          <div className="product-delete">
+            <img
+              src={cartDeleteProduct}
+              alt="cartDeleteProduct"
+              onClick={() => dispatch(removeProduct(props.product))}
+            />
+          </div>
+        </div> */}
       </div>
     </div>
   );
